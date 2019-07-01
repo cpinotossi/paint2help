@@ -1,0 +1,27 @@
+{
+  "name": "paint2help",
+  "version": "1.0.0",
+  "description": "Express App to share and sell paintings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpinotossi/paint2help.git"
+  },
+  "author": "cpinotossi@web.de",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cpinotossi/paint2help/issues"
+  },
+  "homepage": "https://github.com/cpinotossi/paint2help#readme",
+  "engines": {
+    "node": "11.9.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.0.4"
+  }
+}
