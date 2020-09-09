@@ -14,8 +14,13 @@ app.set('view engine', 'hbs');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'images')));
+
+let staticOptions = {
+    maxAge: "60s"
+}
+
+app.use(express.static(path.join(__dirname, 'public'),staticOptions));
+app.use(express.static(path.join(__dirname, 'images'),staticOptions));
 
 app.use('/', indexRouter);
 

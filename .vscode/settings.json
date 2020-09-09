@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/eebcf0d5-810a-45b4-ba04-c12b31545f91/resourceGroups/paint2help-rg/providers/Microsoft.Web/sites/paint2help",
+    "appService.deploySubpath": "."
+}
