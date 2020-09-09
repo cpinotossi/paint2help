@@ -1,15 +1,30 @@
 var express = require('express');
 var router = express.Router();
 
-var userName = "Christian";
+const fs = require('fs');
+
+
+// list all files in the directory
+function getImageList(dir){
+  fs.readdirSync(dir, (err, files) => {
+    if (err) {
+        throw err;
+    }
+    return files;
+});
+}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  //render result
-  res.render('index', {
-    title: userName,
-  });
-})
+  // directory path
+  const dir = './images/luna';
 
+  const imageList = fs.readdirSync(dir);
+  let params = {
+    imageList: imageList
+  };
+
+  res.render('index', params);
+});
 
 module.exports = router;
