@@ -5,23 +5,32 @@ const fs = require('fs');
 
 
 // list all files in the directory
-function getImageList(dir){
+function getImageList(dir) {
   fs.readdirSync(dir, (err, files) => {
     if (err) {
-        throw err;
+      throw err;
     }
     return files;
-});
+  });
 }
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   // directory path
-  const dir = './images/luna';
+  const dir = './images';
 
   const imageList = fs.readdirSync(dir);
+  var imageListFiltered = imageList.filter(function (filename)
+    {
+      //^.*[^.]{5}$
+      return (/[.]/.exec(filename)) ? /[^.]+$/.exec(filename) : undefined;
+      //return fruit !== "kiwi"
+    });
+    
   let params = {
-    imageList: imageList
+    imageList: imageListFiltered,
+    name: "Welcome",
+    rootPath: "/",
   };
 
   res.render('index', params);

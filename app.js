@@ -1,8 +1,8 @@
 var express = require('express');
 var path = require('path');
-var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var lunaRouter = require('./routes/luna');
 var app = express();
 
 // disable page caching
@@ -23,5 +23,7 @@ app.use(express.static(path.join(__dirname, 'public'),staticOptions));
 app.use(express.static(path.join(__dirname, 'images'),staticOptions));
 
 app.use('/', indexRouter);
+app.use('/luna', lunaRouter);
+
 
 module.exports = app;
