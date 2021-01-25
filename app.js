@@ -3,7 +3,7 @@ var path = require('path');
 
 var indexRouter = require('./routes/index');
 var lunaRouter = require('./routes/luna');
-var lunaRouter = require('./routes/autsch');
+var autschRouter = require('./routes/autsch');
 var app = express();
 
 // disable page caching
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'images'),staticOptions));
 
 app.use('/', indexRouter);
 app.use('/luna', lunaRouter);
-app.use('/autsch', lunaRouter);
+app.use('/autsch', autschRouter);
 
 
 
