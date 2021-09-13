@@ -1,0 +1,15 @@
+<div>
+  <h1>Paint2Help - {{name}}</h1>
+</div>
+<div id="gallery" style="margin:0px auto;display:none;">
+  {{#each imageList}}
+  <img alt="Image {{this}} Title" src="{{this}}" data-image="{{this}}"
+    data-description="Image {{this}} Description" style="display:none">
+  {{/each}}
+</div>
+  <script type="text/javascript">
+
+    jQuery(document).ready(function () {
+      jQuery("#gallery").unitegallery();
+    }); 
+  </script>

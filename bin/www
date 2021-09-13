@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-
+var dotenv = require('dotenv').config();
 var app = require('../app');
 var debug = require('debug')('graph-tutorial:server');
 var http = require('http');
@@ -29,7 +29,9 @@ var server = http.createServer(app);
 
 server.listen(port);
 server.on('error', onError);
+let start = Date.now();
 server.on('listening', onListening);
+
 
 /**
  * Normalize a port into a number, string, or false.
@@ -83,6 +85,8 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 function onListening() {
+  let duration = Date.now() - start;
+  //appInsights.defaultClient.trackMetric({name: "server startup time", value: duration});
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
