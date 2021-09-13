@@ -9,10 +9,6 @@
   "author": "cpinotossi@web.de",
   "license": "MIT",
   "dependencies": {
-    "@microsoft/applicationinsights-web": "^2.5.11",
-    "appinsights-express-middleware": "^0.1.0",
-    "applicationinsights": "^1.8.10",
-    "applicationinsights-native-metrics": "0.0.6",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -27,6 +23,5 @@
     "url": "https://github.com/cpinotossi/paint2help/issues"
   },
   "homepage": "https://github.com/cpinotossi/paint2help#readme",
-  "devDependencies": {},
   "description": ""
 }
