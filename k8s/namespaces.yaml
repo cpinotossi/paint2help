@@ -1,0 +1,13 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: p2h
+  labels:
+    name: p2h
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: p2h-api
+  labels:
+    name: p2h-api

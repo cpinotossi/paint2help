@@ -16,5 +16,42 @@ The value for a configuration variable may be specified via an environment varia
 
 | Name                 | Required | Type        | Default Value | Description                                   |
 |----------------------|----------|-------------|---------------|-----------------------------------------------|
-| PORT                 | YES      | ENV         | 80            | The port that the web app will listen on.     |
+| PORT                 | YES      | ENV         | 8080            | The port that the web app will listen on.     |
+
+## Run in Docker
+
+Simple build:
+
+```bash
+docker build -f Dockerfile -t "paint2help/website:1.0" .
+```
+
+To build the image for release:
+
+```bash
+docker build --no-cache --build-arg IMAGE_VERSION="1.0" --build-arg IMAGE_CREATE_DATE="`date -u +"%Y-%m-%dT%H:%M:%SZ"`" --build-arg IMAGE_SOURCE_REVISION="`git rev-parse HEAD`" -f Dockerfile -t "paint2help/website:1.0" .
+```
+
+To run the image
+
+```bash
+# Example 1 - Set config values via environment variables
+docker run -d -p 8080:80 --name p2h-website -e "PORT=80" paint2help/website:1.0
+```
+
+## Testing
+
+Request landing page.
+
+```bash
+curl -iv http://localhost:8080/ 
+```
+
+## Docker Commands
+
+### How to list containers
+
+~~~~bash
+$ docker image ls
+~~~~
 

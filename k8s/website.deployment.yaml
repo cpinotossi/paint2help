@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: p2h
+  name: paint2help-website
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paint2help-website
+  template:
+    metadata:
+      labels:
+        app: paint2help-website
+    spec:
+      containers:
+      - name: paint2help-website
+        image: paint2help.azurecr.io/paint2help/website:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: PORT
+          value: "80"

@@ -34,6 +34,8 @@ router.get('/', function(req, res, next) {
     imageList: imageListModified,
     name: userName,
     rootPath: baseImageURL+userName+"/",
+    bgcolor: process.env.BGCOLOR,
+    title: process.env.TITLE
   };
 
   res.render('user', params);

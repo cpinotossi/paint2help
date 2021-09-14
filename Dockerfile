@@ -5,6 +5,8 @@ ARG IMAGE_VERSION
 ARG IMAGE_SOURCE_REVISION
 
 ENV PORT=80 \
+    TITLE="paint2help" \
+    BGCOLOR="white" \
     CONFIG_FILES_PATH="/secrets"
 
 # Metadata as defined in OCI image spec annotations - https://github.com/opencontainers/image-spec/blob/master/annotations.md

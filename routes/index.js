@@ -31,6 +31,8 @@ router.get('/', function (req, res, next) {
     imageList: imageListFiltered,
     name: "Welcome",
     rootPath: "/",
+    bgcolor: process.env.BGCOLOR,
+    title: process.env.TITLE
   };
 
   res.render('index', params);
